@@ -2,7 +2,7 @@
 
 {% block menu %}
     <li><a href="{% url 'product_detail' product.pk %}">Edit</a></li>
-{#     <li><a href="{% url 'article_delete' article.pk %}">Delete</a></li>#}
+     <li><a href="{% url 'product_delete' product.pk %}">Delete</a></li>
 {% endblock %}
 
 {% block content %}

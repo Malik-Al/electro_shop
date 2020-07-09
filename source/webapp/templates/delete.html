@@ -1,19 +1,19 @@
-{#{% extends 'base.html' %}#}
-{##}
-{#    {% block title %}Delete Product{% endblock %}#}
-{##}
-{#{% block menu %}#}
-{#     <li><a href="{% url 'product_detail' product.pk %}">Edit</a></li>#}
-{#{% endblock %}#}
-{##}
-{#{% block content %}#}
-{#    <form method="POST" action="{% url "product_delete" article.pk%}" class="text-center">#}
-{#        <h1>Are you sure want to delete article "{{ product }}"?</h1>#}
-{#        {% csrf_token %}#}
-{#        <input type="submit" value="Confirm" class="btn btn-danger">#}
-{#        <p><a href="{% url "product_detail" product.pk %}" class="btn btn-primary">Cancel</a></p>#}
-{#    </form>#}
-{#{% endblock %}#}
-{##}
-{#</body>#}
-{#</html>#}
+{% extends 'base.html' %}
+
+    {% block title %}Delete Product{% endblock %}
+
+{% block menu %}
+     <li><a href="{% url 'product_detail' product.pk %}">Edit</a></li>
+{% endblock %}
+
+{% block content %}
+    <form method="POST" action="{% url "product_delete" product.pk%}" class="text-center">
+        <h1>Are you sure want to delete article "{{ product }}"?</h1>
+        {% csrf_token %}
+        <input type="submit" value="Confirm" class="btn btn-danger">
+        <p><a href="{% url "product_detail" product.pk %}" class="btn btn-primary">Cancel</a></p>
+    </form>
+{% endblock %}
+
+</body>
+</html>

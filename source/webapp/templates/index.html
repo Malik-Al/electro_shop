@@ -16,6 +16,7 @@
                          <p class="card-text">{{ product.get_category_display }}</p>
                          <p class="card-text text-right">{{ product.price }}coм</p>
                          <p><a href="{% url 'product_update' product.pk %}">Edit</a></p>
+                         <p><a href="{% url 'product_delete' product.pk %}">Delete</a></p>
                     </div>
                 </div>
             </div>
