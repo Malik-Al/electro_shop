@@ -1,10 +1,14 @@
 {% extends 'base.html' %}
 
-
+{% block menu %}
+    <li><a href="{% url 'product_detail' product.pk %}">Edit</a></li>
+{#     <li><a href="{% url 'article_delete' article.pk %}">Delete</a></li>#}
+{% endblock %}
 
 {% block content %}
     <h1>{{ product.name }}</h1>
-    <p>Категория:{{ product.get_category_display}}</p>
-    <p>Цена:{{ product.price }}сом</p>
-    <div class="pre">{{ product.description }}</div>
+    <div class="pre">Описание: {{ product.description }}</div>
+    <p>Категория: {{ product.get_category_display}}</p>
+    <p>Цена: {{ product.price }}сом</p>
+    <p>Остаток: {{ product.amount }}</p>
 {% endblock %}
