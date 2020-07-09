@@ -9,11 +9,19 @@
     <title>{% block title %}Shop{% endblock %}</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static "css/style.css" %}">
-    <a href="{% url 'index' %}" class="nav-link">Home</a>
+{#    <a href="{% url 'index' %}" class="nav-link">Home</a>#}
     {% block styles %}{% endblock %}
 </head>
 <body>
-{% block menu %}{% endblock %}
+<nav class="navbar">
+   <div class="container">
+       <ul class="menu">
+           <li><a href="{% url 'index' %}">Home</a></li>
+           {% block menu %}{% endblock %}
+         </ul>
+     </div>
+</nav>
+
 <div class="container">
     {% block content %}{% endblock %}
 </div>
