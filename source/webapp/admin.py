@@ -3,4 +3,10 @@ from webapp.models import Product
 
 
 
-admin.site.register(Product)
+class ProductAdmin(admin.ModelAdmin):
+    list_display = ['id', 'name', 'description', 'category']
+    list_filter = ['name', 'category']
+    fields = ['name', 'description', 'category', 'amount', 'price']
+    readonly_fields = ['amount', 'price']
+
+admin.site.register(Product, ProductAdmin)

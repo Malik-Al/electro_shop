@@ -2,9 +2,9 @@
 
     {% block title %}Update Product{% endblock %}
 
-{#{% block menu %}#}
-{#    <li><a href="{% url 'product_detail_view'  product.pk %}">View</a></li>#}
-{#{% endblock %}#}
+{% block menu %}
+    <li><a href="{% url 'product_detail'  product.pk %}">View</a></li>
+{% endblock %}
 
 {% block content %}
 <h1 class="crearet"> Update Product</h1>

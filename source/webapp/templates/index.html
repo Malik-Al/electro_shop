@@ -6,6 +6,11 @@
 
 {% block content %}
     <h1 class="my-3">Добро пожаловать в наш магазин!</h1>
+{#    <a href="{% url 'filter_product' %}" method="GET"><button>Filter</button></a>#}
+     <form class="form-inline my-2 my-lg-0" action="{% url 'filter_product'%}" method="GET" name="filter">
+            <input class="form-control mr-sm-2 ml-3" type="text" placeholder="Filter" name="filter">
+            <input type="submit" value="Filter" class="btn btn-outline-success my-2 my-sm-0">
+     </form>
     <div class="row">
     {% for product in products %}
             <div class="col-12 col-sm-6 col-md-4 col-lg-3 mt-3">

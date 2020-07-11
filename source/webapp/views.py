@@ -5,12 +5,19 @@ from webapp.models import Product
 
 
 def index_view(request,*args, **kwargs):
-
-    products = Product.objects.all()
+    products = Product.objects.filter(amount__gt=1).order_by('category', 'name')
     return render(request, 'index.html', context={
         'products': products
 
     })
+
+def filter_product(request):
+    prices = request.GET.get('filter')
+    products = Product.objects.filter(name__contains=prices)
+    return render(request, 'index.html', context={
+        'products': products
+    })
+
 
 
 def product_detail_view(request, pk):
